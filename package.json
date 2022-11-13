@@ -1,0 +1,15 @@
+{
+  "name": "depo-wallet",
+  "private": true,
+  "scripts":{
+    "bootstrap": "npx lerna bootstrap",
+    "build:chromium": "cd packages/extension && yarn build:chromium",
+    "build:firefox": "cd packages/extension && yarn build:firefox",
+    "dev:chromium": "cd packages/extension && yarn dev:chromium",
+    "dev:firefox": "cd packages/extension && yarn dev:firefox"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  },
+  "workspaces": ["packages/*"]
+}

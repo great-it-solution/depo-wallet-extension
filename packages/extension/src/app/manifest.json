@@ -1,0 +1,55 @@
+{
+	"name": "__MSG_appName__",
+	"description": "__MSG_appDescription__",
+	"version": "0.0.0",
+	"permissions": [
+		"storage",
+		"unlimitedStorage",
+		"clipboardWrite",
+		"http://localhost:8545/",
+		"https://*.infura.io/",
+		"activeTab",
+		"webRequest",
+		"*://*.eth/",
+		"notifications"
+	],
+	"background": {
+		"scripts": ["vendors.bundle.js", "background.bundle.js"]
+	},
+	"default_locale": "en",
+	"browser_action": {
+		"default_title": "DepoWallet",
+		"default_icon": "images/icon-128.png",
+		"default_popup": "popup.html"
+	},
+	"commands": {
+		"_execute_browser_action": {
+			"suggested_key": {
+				"windows": "Alt+Shift+D",
+				"mac": "Alt+Shift+D",
+				"chromeos": "Alt+Shift+D",
+				"linux": "Alt+Shift+D"
+			}
+		}
+	},
+	"icons": {
+		"16": "images/icon-16.png",
+		"19": "images/icon-19.png",
+		"32": "images/icon-32.png",
+		"38": "images/icon-38.png",
+		"48": "images/icon-48.png",
+		"64": "images/icon-64.png",
+		"128": "images/icon-128.png",
+		"512": "images/icon-512.png"
+	},
+	"content_scripts": [
+		{
+			"matches": ["file://*/*", "http://*/*", "https://*/*"],
+			"match_about_blank": true,
+			"all_frames": true,
+			"js": ["vendors.bundle.js", "content_script.bundle.js"],
+			"run_at": "document_end"
+		}
+	],
+	"manifest_version": 2
+}

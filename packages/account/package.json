@@ -1,0 +1,31 @@
+{
+  "name": "@depo-wallet/account",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "license": "",
+  "main": "dist/account.js",
+  "module": "src/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "test": "mocha --timeout 5000 --require @babel/register"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.12",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/register": "^7.16.9",
+    "mocha": "^9.2.0",
+    "webpack": "^5.67.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "assert": "^2.0.0",
+    "bip39": "^3.0.4",
+    "crypto-browserify": "^3.12.0",
+    "ethereumjs-wallet": "^1.0.2",
+    "stream-browserify": "^3.0.0"
+  }
+}
